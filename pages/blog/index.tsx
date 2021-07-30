@@ -43,8 +43,8 @@ export async function getStaticProps() {
   const postsPath = path.join(process.cwd(), 'posts');
   const filenames = fs.readdirSync(postsPath);
   const filePosts = filenames.map(name => {
-    const fullPath = path.join(process.cwd(), 'posts', name)
-    const file = fs.readFileSync(fullPath, 'utf-8');
+    const filePath = path.join(process.cwd(), 'posts', name)
+    const file = fs.readFileSync(filePath, 'utf-8');
     const {data} = matter(file)
     return data
   })
